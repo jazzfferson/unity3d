@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="id-panel" class="info-item" style="flex-direction: row;">
+        <ui:Label text="Id:" name="info-item-title" class="info-item-title-label" />
+        <ui:Label text="lorem ipsum" name="info-item-value" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,6 +1,7 @@
 ﻿using System;
 
-public interface IPausable
+public interface IPausable<T>
 {
-    bool Paused { get; set; }
+    bool Pause { get; set; }
+    event Action<T> OnPauseChangeCallBack;
 }
