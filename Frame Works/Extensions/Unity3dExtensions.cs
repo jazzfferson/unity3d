@@ -8,7 +8,7 @@ using System.Collections.Generic;
 public static class Unity3dExtensions
 {
 
-    private static System.Random rng = new System.Random();
+    private static readonly Random rng = new Random();
 
     public static void Shuffle<T>(this IList<T> list)
     {
@@ -21,6 +21,27 @@ public static class Unity3dExtensions
             list[k] = list[n];
             list[n] = value;
         }
+    }
+    public static void Shuffle<T>(this T[] array)
+    {
+        int n = array.Length;
+        while (n > 1)
+        {
+            n--;
+            int k = rng.Next(n + 1);
+            T value = array[k];
+            array[k] = array[n];
+            array[n] = value;
+        }
+    }
+
+    public static T BiDimensionalListAcessor<T>(this IList<T> list, int x, int y, int xLength)
+    {
+        return list[y * xLength + x];
+    }
+    public static T BiDimensionalArrayAcessor<T>(this T[] array, int x, int y, int xLength)
+    {
+        return array[y * xLength + x];
     }
 
     public static Color SetAlpha(this Color color, float alpha)
